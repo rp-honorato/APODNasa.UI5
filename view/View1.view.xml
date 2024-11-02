@@ -1,0 +1,106 @@
+<mvc:View
+    controllerName="apodui5.controller.View1"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.f"
+    xmlns:tnt="sap.tnt"
+    displayBlock="true"
+    xmlns="sap.m">
+    <Page
+        id="page"
+        showHeader="false"
+        title="{i18n>title}"
+        titleAlignment="Center"
+        floatingFooter="true"
+        class="sapUiContentPadding sapUiResponsivePadding--header sapUiResponsivePadding--subHeader sapUiResponsivePadding--content sapUiResponsivePadding--footer backgroundImage">
+        <subHeader/>
+        <content>
+            <Panel id="_IDGenPanel"
+                expandable="false"
+                headerText="NASA: Astronomy Picture of the Day"
+                width="auto"
+                class="sapUiResponsiveMargin">
+                <content>
+                    <Text id="_IDGenText1" text="Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer."/>
+                </content>
+            </Panel>
+            <Panel id="_IDGenPanel1"
+                width="auto"
+                class="sapUiResponsiveMargin"
+                accessibleRole="Region">
+                <FlexBox id="_IDGenFlexBox1"
+                    height="10%"
+                    alignItems="Start"
+                    justifyContent="Center">
+                    <MessageStrip id="_IDGenMessageStrip1"
+                        type="Information"
+                        text="{nasaModel>/apod/date}"
+                        class="sapUiTinyMargin"/>
+                </FlexBox>
+                <headerToolbar>
+                    <OverflowToolbar id="_IDGenOverflowToolbar">
+                        <Title id="_IDGenTitle" text="{nasaModel>/apod/title}"/>
+                        <Title id="_IDGenTitle1" text="{nasaModel>/apod/service_version}"/>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <l:HorizontalLayout id="_IDGenHorizontalLayout">
+                    <Image id="_IDGenImage"
+                        src="{nasaModel>/apod/hdurl}"
+                        width="100%"/>
+                </l:HorizontalLayout>
+                <MessageStrip id="_IDGenMessageStrip2"
+                    type="Information"
+                    text="{nasaModel>/apod/explanation}"
+                    enableFormattedText="true"
+                    showIcon="true"
+                    class=""/>
+                <MessageStrip id="_IDGenMessageStrip3"
+                    text="Image Credit: %%0 %%1 %%2"
+                    type="Warning"
+                    enableFormattedText="true"
+                    showIcon="true"
+                    class="sapUiTinyMargin">
+                    <controls>
+                        <Link id="_IDGenLink1"
+                            href="https://www.nasa.gov/"
+                            text="NASA,"/>
+                        <Link id="_IDGenLink2"
+                            href="https://www.jpl.nasa.gov/"
+                            text="JPL-Caltech,"/>
+                        <Link id="_IDGenLink3"
+                            href="https://www.spacescience.org/index.php"
+                            text="Space Science Institute"/>
+                    </controls>
+                </MessageStrip>
+            </Panel>
+        </content>
+        <footer>
+            <Toolbar
+                id="_IDGenToolbar"
+                class="sapUiSmallMarginTop">
+                <FlexBox
+                    id="_IDGenFlexBox"
+                    width="100%"
+                    alignItems="End"
+                    justifyContent="End">
+                    <MessageStrip
+                        id="_IDGenMessageStrip"
+                        text="Made by Pedro Honorato with SAP UI5 ❤️"
+                        type="Success"
+                        showIcon="true"
+                        class="sapUiSmallMarginTopBottom">
+                        <link>
+                            <Link
+                                id="_IDGenLink"
+                                text="See my other projects"
+                                target="_blank"
+                                href="https://github.com/rp-honorato"/>
+                        </link>
+                    </MessageStrip>
+                </FlexBox>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>
